@@ -1,0 +1,7 @@
+{
+	"name":"Test de sicologia",
+	"descriptiion":"App con red neural para diagnostico",
+	"repository":"https://github.com/prel1940/TestSicologia.git",
+	"logo":"",
+	"keywords":["vue","flask","python"]
+}
