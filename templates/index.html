@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{'{{ titulo }}'}}</h1>
+       
+            
+                <table id="marco">
+                    <tr id="item" v-for="pregunta of preguntasMostrar" >
+                        <td>{{'{{ pregunta.p }}'}}</td>
+                        <td><input type="radio" v-model="pregunta.valor" value="0">NO</td>
+                        <td><input type="radio" v-model="pregunta.valor" value="1">SI</td>
+                    </tr>
+                </table>
+        <button @click="siguienteLote">Pagina siguiente</button>
+    </div>
+
+    <style>
+        #si,#no{
+            width: 80px;
+            height: 100%;
+            background-color: #ccc;
+        }
+        #marco{
+            background-color: aquamarine;
+            width: 1000px;
+            height: 300px;
+        }
+        #item{
+            padding: 10px;
+            background-color: #ccc;
+            box-sizing: border-box;
+            width: 65%;
+            height: 40px;
+            border-radius: 15px;
+            border: 1px solid #000;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>    
+    <script src="./static/script.js"></script>
+</body>
+</html>
