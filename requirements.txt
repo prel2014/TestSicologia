@@ -1,5 +1,9 @@
 Flask
 Flask-Cors
+flask-sqlalchemy
+psycopg2
+pysqlite3
+sqlalchemy-pysqlite3
 numpy
 numpydoc
 scikit-image

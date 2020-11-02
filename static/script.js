@@ -1,6 +1,5 @@
 const app = new Vue({
     el:'#app',
-    
     data:{
         grupo:[],
         pagina:0,
@@ -61,11 +60,10 @@ const app = new Vue({
             {p:'48. ¿Ha dicho alguna vez mentiras en su vida?',respuesta:'',valor:[],tipo:'L'},
             {p:'49. ¿Dice algunas veces lo primero que se le viene a la cabeza?',respuesta:'',valor:[],tipo:'E'},
             {p:'50. ¿Se preocupa durante un tiempo demasiado largo, después de una experiencia embarazosa?',respuesta:'',valor:[],tipo:'N'}
-        ]                   
+        ]
 
     },
     mounted(){
-        //this.rellenar();
         this.siguienteLote();
     },
     methods:{
@@ -83,11 +81,18 @@ const app = new Vue({
                         this.dejar.push((i+1)+(this.pagina-1)*5)
                     }
                 }
-                
                 if(this.dejar.length==0){this.renderizar();}else{alert("Las siguientes preguntas no se han respondido:\n"+this.dejar)}
             }
-            
-            
+        },
+        Enviar(){
+            let datos = {
+                DimE:this.tipoE,
+                DimL:this.tipoL,
+                DimN:this.tipoN
+            }
+            axios.post("/Diagnostico",datos).then((result) => {
+                console.log(result);
+            });
         },
         renderizar(){
             if(this.pagina!=0){
@@ -101,9 +106,8 @@ const app = new Vue({
             for(i=5*this.pagina;i<5*(this.pagina+1);i++){
                 this.preguntasMostrar.push(this.preguntas[i]);
             }
-            this.pagina+=1;
-            if(this.pagina==(this.preguntas.length % 5)-1){}
-
+            this.pagina += 1;
+            if(this.pagina==(this.preguntas.length/5))this.Enviar();
         }
     }
 })

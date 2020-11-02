@@ -3,46 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link href="{{ url_for('static', filename='css/main.scss.css') }}" rel="stylesheet" type="text/css">
     <title>Document</title>
 </head>
 <body>
-    <div id="app">
-        <h1>{{'{{ titulo }}'}}</h1>
-       
-            
-                <table id="marco">
-                    <tr id="item" v-for="pregunta of preguntasMostrar" >
-                        <td>{{'{{ pregunta.p }}'}}</td>
-                        <td><input type="radio" v-model="pregunta.valor" value="0">NO</td>
-                        <td><input type="radio" v-model="pregunta.valor" value="1">SI</td>
-                    </tr>
-                </table>
-        <button @click="siguienteLote">Pagina siguiente</button>
-    </div>
-
-    <style>
-        #si,#no{
-            width: 80px;
-            height: 100%;
-            background-color: #ccc;
-        }
-        #marco{
-            background-color: aquamarine;
-            width: 1000px;
-            height: 300px;
-        }
-        #item{
-            padding: 10px;
-            background-color: #ccc;
-            box-sizing: border-box;
-            width: 65%;
-            height: 40px;
-            border-radius: 15px;
-            border: 1px solid #000;
-        }
-    </style>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>    
-    <script src="./static/script.js"></script>
+    <form action="/Paciente" method="POST">
+      <div>
+        <div>
+          <div>Nombre y Apellidos:</div>
+          <div><input type="text" name="nombre"/></div>
+        </div>
+        <div>
+          <div>DNI:</div>
+          <div><input type="text" name="dni"/></div>
+        </div>
+        <div>
+          <div><input type="submit" /></div>
+          <div></div>
+        </div>
+      </div>
+    </form>
 </body>
 </html>
