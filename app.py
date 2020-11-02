@@ -34,7 +34,7 @@ def RegistrarDiagnostico():
     diagnostico = Diagnostico(DimL=datos['DimL'],DimN=datos['DimN'],DimE=datos['DimE'])
     db.session.add(diagnostico)
     db.session.commit()
-    return 'Existo al guardar'
+    return render_template('resumen.html')
 if __name__ == 'main':
     db.Base.metadata.drop_all(bind=db.engine)
     db.Base.metadata.create_all(bind=db.engine)

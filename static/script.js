@@ -1,7 +1,7 @@
 Vue.component('tarjeta-resumen',{
     data:function(){
         return {
-            datos=[]       
+            datos=[{'Dimencion L':this.tipoL},{'Dimencion N':this.tipoN},{'Dimencion E':this.tipoE}]       
         }
     },
     template: '<div class="contenedor">'+
