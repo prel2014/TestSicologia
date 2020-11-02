@@ -2,7 +2,7 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from flask_sqlalchemy import SQLAlchemy
-from sassutils.wsgi import SassMiddleware
+#from sassutils.wsgi import SassMiddleware
 import db
 from models import Paciente
 from models import Diagnostico
