@@ -15,9 +15,9 @@ app = Flask(__name__)
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_DATABASE_URI'] = database_file
-app.wsgi_app = SassMiddleware(app.wsgi_app,{
-    'myapp':('static/sass','static/css','/static/css')
-})
+#app.wsgi_app = SassMiddleware(app.wsgi_app,{
+#    'myapp':('static/sass','static/css','/static/css')
+#})
 
 @app.route('/')
 def home():
