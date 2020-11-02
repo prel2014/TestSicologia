@@ -1,14 +1,3 @@
-Vue.component('tarjeta-resumen',{
-    data:function(){
-        return {
-            datos=[{'Dimencion L':this.tipoL},{'Dimencion N':this.tipoN},{'Dimencion E':this.tipoE}]       
-        }
-    },
-    template: '<div class="contenedor">'+
-              '<div v-for="datito for datos">{{ datito.nombre }}</div>'+
-              '<div v-for="datito for datos">{{ datito.contenido }}</div>'+
-              '</div>'
-})
 const app = new Vue({
     el:'#app',
     data:{
@@ -121,4 +110,15 @@ const app = new Vue({
             if(this.pagina==(this.preguntas.length/5))this.Enviar();
         }
     }
+})
+Vue.component('tarjeta-resumen',{
+    data:function(){
+        return {
+            datos=[{'nombre':'Dimension L','contenido':this.tipoL},{'nombre':'Dimension N','contenido':this.tipoN},{'nombre':'Dimencion E','contenido':this.tipoE}]       
+        }
+    },
+    template: '<div class="contenedor">'+
+              '<div v-for="datito for datos">{{ datito.nombre }}</div>'+
+              '<div v-for="datito for datos">{{ datito.contenido }}</div>'+
+              '</div>'
 })
