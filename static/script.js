@@ -111,14 +111,3 @@ const app = new Vue({
         }
     }
 })
-Vue.component('tarjeta-resumen',{
-    data:function(){
-        return {
-            datos=[{'nombre':'Dimension L','contenido':this.tipoL},{'nombre':'Dimension N','contenido':this.tipoN},{'nombre':'Dimencion E','contenido':this.tipoE}]       
-        }
-    },
-    template: '<div class="contenedor">'+
-              '<div v-for="datito for datos">{{ datito.nombre }}</div>'+
-              '<div v-for="datito for datos">{{ datito.contenido }}</div>'+
-              '</div>'
-})
